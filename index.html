@@ -28,8 +28,8 @@
                     <img src="./images/DeWatermark.ai_1749742108526-removebg-preview.png" alt="logo">
                 </a>
 
-                <nav>
-                    <ul class="flex">
+                <nav id="menus">
+                    <ul class="vtcenter">
                         <li><a href="#home" class="nav-link">HOME</a></li>
                         <li><a href="#about" class="nav-link">ABOUT</a></li>
                         <li><a href="#resume" class="nav-link">RESUME</a></li>
@@ -37,7 +37,9 @@
                         <li><a href="#contact" class="nav-link">CONTACT</a></li>
                     </ul>
                 </nav>
-
+               <button onclick="openMenu()">
+                <i class="fa-solid fa-bars"></i>
+               </button>
 
             </div>
         </header>
@@ -115,7 +117,7 @@
         <h2>Skills & Experience</h2>
 
         <div class="resume-container flex">
-            <div class="skills-container flex">
+            <div class="skills-container htcenter">
                 <div class="skill-list vtcenter">
                     <div class="html box center">
                         <div class="tool htcenter">
@@ -301,7 +303,7 @@
                 </div>
             </div>
 
-            <div class="experience-container">
+            <div class="experience-container htcenter">
                 <div class="row flex">
                     <h4>2025</h4>
                     <div class="job-details">
@@ -357,8 +359,7 @@
 
         <form class="flex" action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="c841c674-c353-41fe-887e-84c5a703c97e">
-            <!-- <input type="hidden" name="redirect" value="https://yourdomain.com/thank-you.html" /> -->
-            <!-- <input type="text" name="honeypot" style="display:none" tabindex="-1" autocomplete="off" /> -->
+           
 
             <div class="row flex">
                 <div class="field half">
@@ -373,14 +374,14 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row flex">
                 <div class="field">
                     <input type="text" id="subject" name="subject" required />
                     <label for="subject">Subject</label>
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row flex">
                 <div class="field">
                     <textarea id="message" rows="4" name="message" required></textarea>
                     <label for="message">Your Message here</label>

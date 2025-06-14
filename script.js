@@ -1,5 +1,17 @@
-  window.onscroll = () =>
-            document.querySelector("header").classList.toggle('scrolled', window.scrollY > 0);
+  // window.onscroll = () =>
+  //           document.querySelector("header").classList.toggle('scrolled', window.scrollY > 0);
+
+  window.onscroll = () => {
+  const header = document.querySelector("header");
+
+  if (window.innerWidth > 768) {
+    // Only apply scroll effect on larger screens
+    header.classList.toggle('scrolled', window.scrollY > 0);
+  } else {
+    // On mobile, always keep white background (remove scrolled class if any)
+    header.classList.remove('scrolled');
+  }
+};
 
    
   const links = document.querySelectorAll('.nav-link');
@@ -52,5 +64,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initially hide the button
   scrollTopBtn.style.display = "none";
+
+function openMenu() {
+    const currentDisplay = menus.style.display
+    menus.style.display = currentDisplay === "none" ? "block" : "none";
+}
+
 
 
