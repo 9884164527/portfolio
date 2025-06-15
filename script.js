@@ -13,6 +13,37 @@
   }
 };
 
+document.addEventListener('DOMContentLoaded', () => {
+    const switchTheme = document.querySelector('.switch-theme');
+    const moonIcon = switchTheme.querySelector('.moon');
+    const sunIcon = switchTheme.querySelector('.sun');
+
+    switchTheme.addEventListener('click', () => {
+        // Toggle theme class on <html>
+        document.documentElement.classList.toggle('dark');
+
+        // Toggle icons
+        moonIcon.classList.toggle('hide');
+        sunIcon.classList.toggle('hide');
+
+        // Optional: Save user's theme preference
+        const isDark = document.documentElement.classList.contains('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    // Set theme on load based on localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+        moonIcon.classList.add('hide');
+        sunIcon.classList.remove('hide');
+    } else {
+        document.documentElement.classList.remove('dark');
+        sunIcon.classList.add('hide');
+        moonIcon.classList.remove('hide');
+    }
+});
+
    
   const links = document.querySelectorAll('.nav-link');
   const sections = document.querySelectorAll('section');
@@ -69,6 +100,4 @@ function openMenu() {
     const currentDisplay = menus.style.display
     menus.style.display = currentDisplay === "none" ? "block" : "none";
 }
-
-
 

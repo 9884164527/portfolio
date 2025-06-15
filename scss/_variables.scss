@@ -1,0 +1,34 @@
+// === COLOR VARIABLES ===
+$primary-color: #1877F2;
+$primary-dark: #323258;
+$secondary-color: #687898;
+$highlight-color: #8e2de2;
+$bg-white: #ffffff;
+$bg-light1: #f0f4ff;
+$bg-light2: #ffe0fc;
+$bg-light3: #fef3ff;
+$bg-light4: #dee9ff;
+$bg-light5: #e6f0ff;
+$bg-light6: #fceff9;
+$bg-light7: #ebf4ff;
+$bg-light8: #fff1f7;
+$bg-dark-overlay: rgba(0, 0, 0, 0.5);
+$gradient-text: linear-gradient(to right, $primary-color, $highlight-color);
+$gradient-banner: linear-gradient(120deg, $bg-light1, $bg-light2);
+$gradient-about: linear-gradient(135deg, $bg-light3, $bg-light4);
+$gradient-resume: linear-gradient(135deg, $bg-light5, $bg-light6);
+$gradient-contact: linear-gradient(135deg, $bg-light7, $bg-light8);
+
+$tool-html: #FFE5DC;
+$tool-css: #DEE4FF;
+$tool-js: #F5F5DC;
+$tool-react: #D6EEF5;
+$tool-sass: #FAD0DF;
+$tool-bootstrap: #C6B1D8;
+$tool-github: #B3B3B3;
+$link-bg: #d9f3ff;
+$link-color: #0077b6;
+$link-hover: #ffffff;
+
+// === FONT VARIABLES ===
+$font-primary: "Inter", sans-serif;
