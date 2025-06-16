@@ -1,103 +1,58 @@
-  // window.onscroll = () =>
-  //           document.querySelector("header").classList.toggle('scrolled', window.scrollY > 0);
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.getElementById("header");
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+  const links = document.querySelectorAll(".nav-link");
+  const sections = document.querySelectorAll("section");
+  const menus = document.getElementById("menus");
+  const toggleBtn = document.getElementById("menuToggleBtn"); // Add an ID to your toggle button
 
-  window.onscroll = () => {
-  const header = document.querySelector("header");
+  // Scroll behavior
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
 
-  if (window.innerWidth > 768) {
-    // Only apply scroll effect on larger screens
-    header.classList.toggle('scrolled', window.scrollY > 0);
-  } else {
-    // On mobile, always keep white background (remove scrolled class if any)
-    header.classList.remove('scrolled');
-  }
-};
+    header.classList.toggle("scrolled", scrollY > 0);
+    scrollTopBtn.style.display = scrollY > 300 ? "block" : "none";
 
-document.addEventListener('DOMContentLoaded', () => {
-    const switchTheme = document.querySelector('.switch-theme');
-    const moonIcon = switchTheme.querySelector('.moon');
-    const sunIcon = switchTheme.querySelector('.sun');
-
-    switchTheme.addEventListener('click', () => {
-        // Toggle theme class on <html>
-        document.documentElement.classList.toggle('dark');
-
-        // Toggle icons
-        moonIcon.classList.toggle('hide');
-        sunIcon.classList.toggle('hide');
-
-        // Optional: Save user's theme preference
-        const isDark = document.documentElement.classList.contains('dark');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    });
-
-    // Set theme on load based on localStorage
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        document.documentElement.classList.add('dark');
-        moonIcon.classList.add('hide');
-        sunIcon.classList.remove('hide');
-    } else {
-        document.documentElement.classList.remove('dark');
-        sunIcon.classList.add('hide');
-        moonIcon.classList.remove('hide');
-    }
-});
-
-   
-  const links = document.querySelectorAll('.nav-link');
-  const sections = document.querySelectorAll('section');
-
-  window.addEventListener('scroll', () => {
     sections.forEach(sec => {
-      if (window.scrollY >= sec.offsetTop - 70) {
-        links.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${sec.id}`) {
-            link.classList.add('active');
-          }
-        });
+      if (scrollY >= sec.offsetTop - 70) {
+        links.forEach(link =>
+          link.classList.toggle("active", link.getAttribute("href") === `#${sec.id}`)
+        );
       }
     });
   });
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in-view");
-        } else {
-          entry.target.classList.remove("in-view");
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
-
-  document.querySelectorAll(".slide-left, .slide-right").forEach((el) => {
-    observer.observe(el);
-  });
-});
-
-
-  const scrollTopBtn = document.getElementById("scrollTopBtn");
 
   scrollTopBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  window.addEventListener("scroll", () => {
-    // Show only after scrolling down a bit
-    scrollTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+  // Intersection animation
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry =>
+        entry.target.classList.toggle("in-view", entry.isIntersecting)
+      );
+    },
+    { threshold: 0.2 }
+  );
+
+  document.querySelectorAll(".slide-left, .slide-right").forEach(el => observer.observe(el));
+
+  // Mobile menu toggle
+  window.openMenu = () => {
+    menus.style.display = menus.style.display === "block" ? "none" : "block";
+  };
+
+  // Hide menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (
+      menus.style.display === "block" &&
+      !menus.contains(e.target) &&
+      !toggleBtn.contains(e.target)
+    ) {
+      menus.style.display = "none";
+    }
   });
 
-  // Initially hide the button
   scrollTopBtn.style.display = "none";
-
-function openMenu() {
-    const currentDisplay = menus.style.display
-    menus.style.display = currentDisplay === "none" ? "block" : "none";
-}
-
+});
