@@ -42,7 +42,6 @@
   font-size: 0.938rem;
   -webkit-transition: all 0.15s ease-in-out;
   transition: all 0.15s ease-in-out;
-  cursor: pointer;
 }
 .primarybtn:hover {
   background-color: #323258;

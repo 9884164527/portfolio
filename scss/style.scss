@@ -84,11 +84,6 @@ nav {
     }
 }
 
-.switch-theme {
-    width: 1.188rem;
-    cursor: pointer;
-
-}
 
 .banner {
     padding: 4rem 0;
@@ -98,7 +93,6 @@ nav {
 }
 
 .banner-left {
-    justify-content: center;
 
     .hand-img {
         width: 1.563rem;
@@ -257,7 +251,7 @@ nav {
     p {
         color: $secondary-color;
         font-size: 1.125rem;
-        line-height: 1.7;
+        
         font-weight: 500;
         line-height: 1.6;
     }
