@@ -422,8 +422,7 @@ nav {
 }
 
 .services-container {
-    max-width: 80rem;
-    margin: 0 auto;
+   
     flex-wrap: wrap;
     gap: 4rem;
     flex-direction: column;
@@ -487,8 +486,7 @@ nav {
 }
 
 .projects-container {
-    max-width: 80rem;
-    margin: 0 auto;
+  
     flex-wrap: wrap;
     gap: 2rem;
 
@@ -824,7 +822,7 @@ footer {
     }
 
     .services {
-        height: 100vh;
+        min-height: 100vh;
 
         .services-container {
             flex-direction: row;

@@ -400,8 +400,6 @@ nav ul a:hover {
 }
 
 .services-container {
-  max-width: 80rem;
-  margin: 0 auto;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 4rem;
@@ -464,8 +462,6 @@ nav ul a:hover {
 }
 
 .projects-container {
-  max-width: 80rem;
-  margin: 0 auto;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 2rem;
@@ -781,7 +777,7 @@ footer .logo img {
     margin: 2.813rem 0;
   }
   .services {
-    height: 100vh;
+    min-height: 100vh;
   }
   .services .services-container {
     -webkit-box-orient: horizontal;
