@@ -467,6 +467,7 @@ nav ul a:hover {
   margin: 0 auto;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  gap: 2rem;
 }
 .projects-container .project-card {
   width: 27rem;

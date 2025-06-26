@@ -56,3 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   scrollTopBtn.style.display = "none";
 });
+
+ const cursor = document.querySelector('.custom-cursor');
+

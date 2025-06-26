@@ -8,6 +8,7 @@
 body {
     font-family: $font-primary;
     overflow-x: hidden;
+
 }
 
 html {
@@ -24,7 +25,7 @@ html {
     width: 100%;
     transition: all ease 0.35s;
     z-index: 3;
-    
+
 
     .header-container {
         max-width: 80rem;
@@ -34,11 +35,12 @@ html {
 
 
     }
-    &.scrolled {
-  background-color: #ffffff;
-  box-shadow: 0 0.375rem 0.75rem rgb(119 118 156 / 10%);
 
-}
+    &.scrolled {
+        background-color: #ffffff;
+        box-shadow: 0 0.375rem 0.75rem rgb(119 118 156 / 10%);
+
+    }
 }
 
 
@@ -251,7 +253,7 @@ nav {
     p {
         color: $secondary-color;
         font-size: 1.125rem;
-        
+
         font-weight: 500;
         line-height: 1.6;
     }
@@ -488,6 +490,7 @@ nav {
     max-width: 80rem;
     margin: 0 auto;
     flex-wrap: wrap;
+    gap: 2rem;
 
     .project-card {
         width: 27rem;
@@ -751,7 +754,7 @@ footer {
     .warpper {
         height: 100vh;
     }
-    
+
 
     .header-container {
         nav {
