@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const links = document.querySelectorAll(".nav-link");
   const sections = document.querySelectorAll("section");
   const menus = document.getElementById("menus");
-  const toggleBtn = document.getElementById("menuToggleBtn"); // Add an ID to your toggle button
+  const toggleBtn = document.getElementById("menuToggleBtn"); 
 
   // Scroll behavior
   window.addEventListener("scroll", () => {
@@ -57,5 +57,4 @@ document.addEventListener("DOMContentLoaded", () => {
   scrollTopBtn.style.display = "none";
 });
 
- const cursor = document.querySelector('.custom-cursor');
 

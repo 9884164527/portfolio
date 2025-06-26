@@ -422,7 +422,6 @@ nav ul a:hover {
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
   cursor: pointer;
-  opacity: 0;
   border-radius: 2.25rem;
 }
 .services-container .card:hover {
@@ -438,16 +437,18 @@ nav ul a:hover {
   width: 100%;
 }
 
-.services-container .slide-left {
+.services-container .slide-left,
+.projects-container .slide-left {
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
 }
-.services-container .slide-right {
+.services-container .slide-right,
+.projects-container .slide-right {
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
 }
-.services-container .in-view {
-  opacity: 1;
+.services-container .in-view,
+.projects-container .in-view {
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }
@@ -475,6 +476,8 @@ nav ul a:hover {
   position: relative;
   overflow: hidden;
   border-radius: 2rem;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 .projects-container .project-card img {
   width: 100%;

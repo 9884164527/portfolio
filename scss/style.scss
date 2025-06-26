@@ -436,7 +436,6 @@ nav {
         position: relative;
         transition: all 0.3s ease-out;
         cursor: pointer;
-        opacity: 0;
         border-radius: 2.25rem;
 
         &:hover {
@@ -457,7 +456,8 @@ nav {
 }
 
 
-.services-container {
+.services-container,
+.projects-container {
     .slide-left {
         transform: translateX(-100%);
     }
@@ -467,7 +467,7 @@ nav {
     }
 
     .in-view {
-        opacity: 1;
+        
         transform: translateX(0);
     }
 }
@@ -498,6 +498,8 @@ nav {
         position: relative;
         overflow: hidden;
         border-radius: 2rem;
+        transition: all 0.3s ease-out;
+        
 
         img {
             width: 100%;
